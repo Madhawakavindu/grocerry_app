@@ -7,17 +7,16 @@ class CategoryCard extends StatelessWidget {
   final Color mainCategoryColor;
   final Color categoryBorderColor;
 
+  const CategoryCard({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.circleColor,
+    required this.mainCategoryColor,
+    required this.categoryBorderColor,
+  });
 
-  const CategoryCard(
-    {super.key,
-     required this.title,
-     required this.description,
-     required this.circleColor,
-     required this.mainCategoryColor, 
-     required this.categoryBorderColor}
-        );
-
-  final double cardWidth = 190;
+  final double cardWidth = 180;
   final double cardHeight = 90;
   final double circleRadius = 45;
   @override
@@ -25,6 +24,7 @@ class CategoryCard extends StatelessWidget {
     return Container(
       width: cardWidth,
       height: cardHeight,
+      margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         color: mainCategoryColor,
         borderRadius: BorderRadius.circular(8),
@@ -33,6 +33,7 @@ class CategoryCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
